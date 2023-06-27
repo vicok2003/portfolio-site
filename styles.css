@@ -185,43 +185,6 @@ body{
     margin-top: 120px;
   }
 
-   
-  #Contact{
-    margin: 100px 0 100px 0;
-  }
-
-  .Email-btn{
-   
-  }
-
-  #contact-btn{
-    padding: 10px 22px;
-    border-radius: 10px;
-    font-weight: bold;
-    outline: none;
-  }
-
-  #contact-btn:hover{
-    cursor: pointer;
-  }
-
-  #contact-btn:active{
-    cursor: progress;
-  }
-
-  .address-ph{
-    text-align: justify;
-    margin-top: 12px;
-  }
-
-  .social-media-links{
-    display: flex;
-    justify-content: space-around;
-    padding: 14px;
-    /* width: 100%; */
-    margin-top: 30px;
-  }
-
   #projects{
     height: 400px;
   }
