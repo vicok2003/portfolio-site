@@ -9,15 +9,15 @@
 body{
     background-color: #000;
     color: #fff;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'poppins', sans-serif;
     line-height: 1.6em;
 }
 
 .button {
   border-radius: 4px;
-  background-color: green;
+  background-color: #FFFFFF;
   border: none;
-  color: #FFFFFF;
+  color: #000000;
   text-align: center;
   font-size: 28px;
   padding: 12px;
@@ -155,11 +155,11 @@ body{
   line-height: 1.4em;
 }
 
-.h1{
-  text-align: center;
-  /* color: black; */
-  font-size: 60px;
-  padding: 44px 0;
+.p{
+  text-align: left;
+  opacity: 0.3;
+  padding: 12px 0;
+  font-size: 20px;
 }
 
 .border-line{
@@ -170,53 +170,15 @@ body{
 }
 
 .abt-flex{
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 12px;
-  margin: 12px 0;
+  text-align: justify;
   /* border: 1px solid #f00; */
 }
 
   .abt1{
-    width: 50%;
     /* border: 1px solid red; */
   }
 
-  .abt2{
-    /* border: 1px solid red; */
-    width: 40%;
-
-  }
-
-  .pro-counts{
-    display: flex;
-    justify-content: space-around;
-    padding: 14px;
-    width: 100%;
-    margin-top: 85px;
-    /* border: 1px solid red; */
-  }
-
-  .counts{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    line-height: 1.8em;
-    /* border: 1px solid red; */
-  }
-
-  .counts span{
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .counts p{
-    font-size: 25px;
-    font-weight: 600;
-  }
+  
   
   #Experience{
     text-align: left;
@@ -226,21 +188,10 @@ body{
    
   #Contact{
     margin: 100px 0 100px 0;
-    background-color: #2d2a2a;
-    height: 400px;
-  }
-
-  .contact-h1{
-    padding-top: 60px;
-    /* padding-bottom: 20px; */
   }
 
   .Email-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red; */
-    margin-top: 36px;
+   
   }
 
   #contact-btn{
@@ -259,7 +210,7 @@ body{
   }
 
   .address-ph{
-    text-align: center;
+    text-align: justify;
     margin-top: 12px;
   }
 
@@ -365,7 +316,7 @@ body{
   .footer-cont{
     bottom: 0;
     margin: 100px 0 0;
-    background-color: #0f0e0e;
+    background-color: #000000;
     padding: 12px;
   }
 
@@ -435,8 +386,8 @@ body{
       height: 360px;
     }
 
-    .h1{
-      font-size: 40px;
+    .p{
+      font-size: 24px;
     }
 
     .abt-flex{

@@ -1,7 +1,7 @@
 // Autotyping funtion
 const autoTypingElement = document.getElementById("auto-typing");
 const initialText = "Hey there!, ";
-const phrases = ["Welcome to my Porfolio site."];
+const phrases = ["Welcome to my Portfolio site."];
 const typingSpeed = 100;
 let phraseIndex = 0;
 let eraseMode = false;
