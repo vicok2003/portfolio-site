@@ -11,6 +11,7 @@ body{
     color: #fff;
     font-family: 'poppins', sans-serif;
     line-height: 1.6em;
+    font-size: 18px;
 }
 
 .button {
@@ -170,7 +171,7 @@ body{
 }
 
 .abt-flex{
-  text-align: justify;
+  text-align: left;
   /* border: 1px solid #f00; */
 }
 
@@ -178,6 +179,19 @@ body{
     /* border: 1px solid red; */
   }
 
+  #About, #Experience{
+    padding: 20px;
+  }  
+
+  
+
+  h3{
+    padding: 22px 0 10px;
+  }
+
+  ul li{
+    padding-bottom: 20px;
+  }
   
   
   #Experience{
@@ -353,27 +367,18 @@ body{
       font-size: 24px;
     }
 
-    .abt-flex{
-      flex-wrap: wrap-reverse;
-    }
+    #About{
+      padding: 16px;
+      font-size: 18px;
+    }  
 
     .abt1{
       width: 100%;
-      text-align: justify;
-    }
-
-    .abt2{
-      width: 100%;
+      text-align: left;
     }
 
     .border-line{
       border-radius: 50px;
-    }
-
-    .pro-counts{
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 40px;
     }
 
     #myButton{
