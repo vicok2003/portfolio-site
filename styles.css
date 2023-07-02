@@ -224,18 +224,28 @@ body{
   }
 
   .card-imgs{
+    position: relative;
     width: 100%;
     height: 250px;
+    border-radius: 4px;
   }
 
   .card-text{
-    padding: 10px 4px;
+    padding: 10px 0px 4px 4px;
   }
 
   .card-text a{
-    text-decoration: none;
+    text-decoration: underline;
     color: #ddd;
-    padding: 16px 0;
+    /* padding: 16px 0 0; */
+    bottom: 0;
+  }
+
+  .link-flex{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 6px 4px;
   }
 
   .card-text a:visited{
