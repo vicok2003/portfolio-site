@@ -254,7 +254,7 @@ body{
 
   .project-btn{
     padding: 10px 4px;
-    margin: 16px 12px 0 12px;
+    margin: 16px 12px 34px 12px;
     font-weight: bold;
     background-color: #fff;
     color: #000;
@@ -282,7 +282,14 @@ body{
     background-color: #000000;
   }
 
-  .contact-email p{
+    .footer-border-line{
+      border-top:1px solid #fff;
+      padding-bottom: 30px;
+      border-radius: 20px;
+      box-shadow: 20px grey;
+    }
+
+  .contact-email-p{
     text-align: left;
     padding-bottom: 20px;
   }
@@ -297,7 +304,7 @@ body{
 
   .social-head{
     text-align: center;
-    padding: 100px 0 0;
+    padding: 50px 0 0;
   }
   
   /* Full-width input fields */
@@ -318,7 +325,6 @@ button {
   border: none;
   border-radius: 8px;
   font-size: 20px;
-  width: 100%;
   cursor: pointer;
 }
 
@@ -479,14 +485,9 @@ span.psw {
       /* width: 100%; */
     }
 
-    /* .footer-cont P{
-      text-align: center;
-      padding: 24px 0px;
+    button{
+      width: 100%;
     }
-
-    .footer-flexitems{
-      margin-top: 40px;
-    } */
 
     .cards{
       width: 100%;
