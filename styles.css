@@ -209,7 +209,7 @@ body{
 
     .Project-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: space-around;
     align-content: center;
     padding: 12px;
@@ -420,6 +420,9 @@ span.psw {
 }
 
 
+.error {
+  border: 1px solid red;
+}
 
 
 

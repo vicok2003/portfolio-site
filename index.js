@@ -129,3 +129,72 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// form validation
+
+  // Get the form element
+  const form = document.getElementById('contact-form');
+
+  // Add event listener for form submission
+  form.addEventListener('submit', function(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Validate the form inputs
+    if (validateForm()) {
+      // If form is valid, submit the form
+      form.submit();
+    }
+  });
+
+  // Validate the form inputs
+  function validateForm() {
+    const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const subjectInput = document.querySelector('input[name="subject"]');
+    const messageInput = document.querySelector('textarea[name="message"]');
+
+    let isValid = true;
+
+    // Validate name field
+    if (nameInput.value.trim() === '') {
+      isValid = false;
+      nameInput.classList.add('error');
+    } else {
+      nameInput.classList.remove('error');
+    }
+
+    // Validate email field
+    if (emailInput.value.trim() === '' || !isValidEmail(emailInput.value.trim())) {
+      isValid = false;
+      emailInput.classList.add('error');
+    } else {
+      emailInput.classList.remove('error');
+    }
+
+    // Validate subject field
+    if (subjectInput.value.trim() === '') {
+      isValid = false;
+      subjectInput.classList.add('error');
+    } else {
+      subjectInput.classList.remove('error');
+    }
+
+    // Validate message field
+    if (messageInput.value.trim() === '') {
+      isValid = false;
+      messageInput.classList.add('error');
+    } else {
+      messageInput.classList.remove('error');
+    }
+
+    return isValid;
+  }
+
+  // Validate email format
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+

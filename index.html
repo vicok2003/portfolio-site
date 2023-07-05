@@ -232,7 +232,7 @@
       <section>
         <div id="id01" class="modal">
   
-          <form class="modal-content animate" action="/action_page.php" method="post">
+          <form class="modal-content animate" action="" method="post"  id="contact-form">
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
               <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -240,12 +240,16 @@
         
             <div class="container">
               <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-        
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-                
-              <button type="submit">Login</button>
+              <input type="text" name="name" placeholder="Your Name" required>
+              
+              <label for="email"><b>Email</b></label>
+              <input type="email" name="email" placeholder="Your Email" required>
+
+              <label for="text"><b>Text</b></label>
+              <input type="text" name="subject" placeholder="Subject" required>
+
+              <textarea name="message" placeholder="Your Message" required></textarea><br>
+              <button type="submit">Send Email</button>
               <!-- <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label> -->
@@ -266,7 +270,8 @@
         <p class="contact-email-p">Looking to elevate your online presence? I'm a talented web developer ready to create your dream website. Let's collaborate and build something amazing together. Message me today!</p>
 
         <div class="contact-email">
-          <button onclick="document.getElementById('id01').style.display='block'">Send Email</button>
+          <a href="mailto:vicok2003@gmail.com" style="color: #fff; cursor: pointer;">vicok2003@gmail.com</a>
+          <!-- <button onclick="document.getElementById('id01').style.display='block'">Send Email</button> -->
         </div>
 
 
