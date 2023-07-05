@@ -157,7 +157,7 @@ body{
   text-align: left;
   opacity: 0.4;
   padding: 12px 0;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .pro-p{
@@ -181,7 +181,9 @@ body{
   }
 
   #About, #Experience{
-    padding: 20px;
+    padding: 0 18%;
+    font-size: 25px;
+    line-height: 1.8em;
   }  
 
   
@@ -207,7 +209,7 @@ body{
 
     .Project-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-content: space-around;
     align-content: center;
     padding: 12px;
@@ -219,7 +221,7 @@ body{
   .cards{
     min-height: 200px;
     width: 100%;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
     border-radius: 8px;  
   }
 
@@ -231,7 +233,7 @@ body{
   }
 
   .card-text{
-    padding: 10px 0px 4px 4px;
+    /* padding: 10px 0px 4px 4px; */
   }
 
   .card-text a{
@@ -241,11 +243,13 @@ body{
     bottom: 0;
   }
 
-  .link-flex{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 6px 4px;
+  .card-text h2{
+    font-size: 45px;
+    padding: 20px 0;
+  }
+
+  .card-link{
+
   }
 
   .card-text a:visited{
@@ -454,12 +458,14 @@ span.psw {
     }
 
     .p{
-      font-size: 24px;
+      font-size: 26px;
     }
 
-    #About{
+    #About, #Experience{
+      width: 100%;
       padding: 16px;
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 1.8em;
     }  
 
     .abt1{
