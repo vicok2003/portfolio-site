@@ -207,6 +207,15 @@ body{
   }
 
 
+  .p-contact{
+    color: #fff;
+  }
+
+  .p-contact:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
     .Project-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -248,9 +257,9 @@ body{
     padding: 20px 0;
   }
 
-  .card-link{
+  /* .card-link{
 
-  }
+  } */
 
   .card-text a:visited{
     text-decoration: underline;
@@ -281,6 +290,7 @@ body{
     width: 40%;
   }
   
+
   .footer-cont{
     padding: 12px;
     background-color: #000000;
@@ -312,13 +322,28 @@ body{
   }
   
   /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+#message{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.error{
+  color: red;
+  font-size: 12px;
+  display: block;
 }
 
 /* Set a style for all buttons */
@@ -418,12 +443,6 @@ span.psw {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
-
-
-.error {
-  border: 1px solid red;
-}
-
 
 
 

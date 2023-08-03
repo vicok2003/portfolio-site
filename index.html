@@ -61,7 +61,7 @@
         <p class="p">01. About</p>
         <div class="abt-flex">
             <div class="abt1">
-              <p>Hey there! I'm Okafor Chukwubuikem, an ambitious and talented 18-year-old frontend developer passionate about crafting exceptional user experiences through clean and efficient code.
+              <p>Hey there! I'm Okafor Chukwubuikem, an ambitious and talented 20-year-old frontend developer passionate about crafting exceptional user experiences through clean and efficient code.
               <br>
               <br>
               <h3>Background:</h3>
@@ -118,8 +118,8 @@
               <h3>Contact Information:</h3>
 
               <p>
-                If you would like to collaborate or discuss any frontend opportunities, feel free to connect with me via email at <a href="mailto:vicok2003@gmail.com">vicok2003@gmail.com</a>
-                or find me on LinkedIn at <a href="https://www.linkedin.com/in/chukwubuikem-okafor-63a4b6251">Chukwubuikem Okafor</a>.
+                If you would like to collaborate or discuss any frontend opportunities, feel free to connect with me via email at <span onclick="document.getElementById('id01').style.display='block'" class="p-contact">(vicok2003@gmail.com)</span>
+                or find me on LinkedIn at <a href="https://www.linkedin.com/in/chukwubuikem-okafor-63a4b6251" style="color: #ffffff;">(Chukwubuikem Okafor)</a>.
               </p>
             </div>
         </div>
@@ -232,32 +232,35 @@
       <section>
         <div id="id01" class="modal">
   
-          <form class="modal-content animate" action="" method="post"  id="contact-form">
+          <form class="modal-content animate" action="https://formspree.io/f/xeqbevve" method="post"  id="contact-form" onsubmit="return validateForm()">
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <img src="img_avatar2.png" alt="Avatar" class="avatar">
+              <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
             </div>
         
             <div class="container">
               <label for="uname"><b>Username</b></label>
-              <input type="text" name="name" placeholder="Your Name" required>
-              
+              <input type="text" name="name" id="name" placeholder="Your Name">
+              <span id="nameError" class="error"></span>
+                          
               <label for="email"><b>Email</b></label>
-              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="email" name="email" id="email" placeholder="Your Email">
+              <span id="emailError" class="error"></span>
+            
+              <label for="subject"><b>Subject</b></label>
+              <input type="text" name="subject" id="subject" placeholder="Subject">
+              <span id="subjectError" class="error"></span>
 
-              <label for="text"><b>Text</b></label>
-              <input type="text" name="subject" placeholder="Subject" required>
-
-              <textarea name="message" placeholder="Your Message" required></textarea><br>
+              <label for="message"><b>Message</b></label>
+              <textarea name="message" id="message" placeholder="Your Message"></textarea>
+              <span id="messageError" class="error"></span><br>
+            
               <button type="submit">Send Email</button>
-              <!-- <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label> -->
             </div>
         
             <div class="container" style="background-color:#f1f1f1">
-              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-              <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
+              <button type="button" onclick="clearInputs()" class="cancelbtn">Clear</button>
+            </div>
             </div>
           </form>
         </div>
@@ -270,24 +273,24 @@
         <p class="contact-email-p">Looking to elevate your online presence? I'm a talented web developer ready to create your dream website. Let's collaborate and build something amazing together. Message me today!</p>
 
         <div class="contact-email">
-          <a href="mailto:vicok2003@gmail.com" style="color: #fff; cursor: pointer;">vicok2003@gmail.com</a>
-          <!-- <button onclick="document.getElementById('id01').style.display='block'">Send Email</button> -->
+          <!-- <a href="mailto:vicok2003@gmail.com" style="color: #fff; cursor: pointer;">vicok2003@gmail.com</a> -->
+          <button onclick="document.getElementById('id01').style.display='block'">Send Email</button>
         </div>
 
 
         <h5 class="social-head">Follow us:</h5>
         <div class="social-icons">
           <div class="social-i">
-            <a href="https://www.facebook.com/profile.php?id=100085578233705"><img src="./Assets/icons8-facebook-50.png" alt=""></a>
+            <a href="https://www.facebook.com/profile.php?id=100085578233705" target="_blank"><img src="./Assets/icons8-facebook-50.png" alt=""></a>
           </div>
           <div class="social-i">
-            <a href="https://twitter.com/ChukwubuikemO10"><img src="./Assets/icons8-twitter-50.png" alt=""></a>
+            <a href="https://twitter.com/ChukwubuikemO10" target="_blank"><img src="./Assets/icons8-twitter-50.png" alt=""></a>
           </div>
           <div class="social-i">
-            <a href=""><img src="./Assets/icons8-instagram-50.png" alt=""></a>
+            <a href="" target="_blank"><img src="./Assets/icons8-instagram-50.png" alt=""></a>
           </div>
           <div class="social-i">
-            <a href="https://www.linkedin.com/in/chukwubuikem-okafor-63a4b6251"><img src="./Assets/icons8-linkedin-50.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/chukwubuikem-okafor-63a4b6251" target="_blank"><img src="./Assets/icons8-linkedin-50.png" alt=""></a>
           </div>
       </div>
 
