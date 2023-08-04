@@ -239,33 +239,44 @@
             </div>
         
             <div class="container">
-              <label for="uname"><b>Username</b></label>
+              <br>
               <input type="text" name="name" id="name" placeholder="Your Name">
               <span id="nameError" class="error"></span>
-                          
-              <label for="email"><b>Email</b></label>
+              <br>
               <input type="email" name="email" id="email" placeholder="Your Email">
               <span id="emailError" class="error"></span>
-            
-              <label for="subject"><b>Subject</b></label>
+              <br>
               <input type="text" name="subject" id="subject" placeholder="Subject">
               <span id="subjectError" class="error"></span>
-
-              <label for="message"><b>Message</b></label>
+              <br>
               <textarea name="message" id="message" placeholder="Your Message"></textarea>
               <span id="messageError" class="error"></span><br>
             
-              <button type="submit">Send Email</button>
+              <button type="submit"  id="showModalButton">Send Email</button>
             </div>
         
             <div class="container" style="background-color:#f1f1f1">
               <button type="button" onclick="clearInputs()" class="cancelbtn">Clear</button>
             </div>
+
+            <div id="confirmationModal" class="mod">
+              <div class="mod-content">
+                <div class="cls-cont">
+                <span class="cls">&times;</span>
+                </div>
+                <p class="confirmation-m">
+                  <b>Notice:</b> Please cross-check your inputs to ensure correct spelling of email and other details. If you are certain that everything is correct, you may proceed to send your email.
+                </p>
+                <button id="proceedButton" onclick="submitForm()">Proceed and Send</button>
+              </div>
             </div>
           </form>
+
         </div>
       </section>
     </div>
+
+
     <footer id="Contact">
     <p class="footer-border-line"></p>
       <div class="footer-cont">

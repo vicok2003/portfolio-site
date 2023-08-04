@@ -70,56 +70,6 @@ function closeNav() {
 
 
 
-
-
-// projects
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 5000); // Change image every 2 seconds
-}
-
-
-// const slides = document.querySelectorAll('.slide');
-// let currentSlide = 0;
-
-// function showSlide(slideIndex) {
-//   slides.forEach((slide, index) => {
-//     if (index === slideIndex) {
-//       slide.classList.add('active');
-//     } else {
-//       slide.classList.remove('active');
-//     }
-//   });
-// }
-
-// function nextSlide() {
-//   currentSlide = (currentSlide + 1) % slides.length;
-//   showSlide(currentSlide);
-// }
-
-// // Automatically switch slides every 5 seconds
-// setInterval(nextSlide, 5000);
-
-// showSlide(currentSlide);
-
-
-
-
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -142,58 +92,135 @@ function validateForm() {
   var subjectError = document.getElementById("subjectError");
   var messageError = document.getElementById("messageError");
 
+  // Reset the error messages
+  nameError.textContent = "";
+  emailError.textContent = "";
+  subjectError.textContent = "";
+  messageError.textContent = "";
 
-    // Reset the error messages
-    nameError.textContent = "";
-    emailError.textContent = "";
-    subjectError.textContent = "";
-    messageError.textContent = "";
+  var isValid = true; // Flag to track overall validation
 
-    // Simple validation to check if the required fields are not empty
-    if (name.value.trim() === "") {
-      nameError.textContent = "Input required";
-      return false; // Prevent form submission
-    }
-
-    if (email.value.trim() === "") {
-      emailError.textContent = "Input required";
-      return false; // Prevent form submission
-    }
-
-    if (subject.value.trim() === "") {
-      subjectError.textContent = "Input required";
-      return false; // Prevent form submission
-    }
-
-    if (message.value.trim() === "") {
-      messageError.textContent = "Input required";
-      return false; // Prevent form submission
-    }
-
-  // Email validation using regular expression
-  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(email.value.trim())) {
-    emailError.textContent = "Please enter a valid email address.";
-    return false; // Prevent form submission
+  // Simple validation to check if the required! fields are not empty
+  if (name.value.trim() === "") {
+      nameError.textContent = "Input required!";
+      isValid = false;
   }
- 
-     // If everything is valid, the form will be submitted
-     return true;
-   }
 
-   function clearInputs() {
+  if (email.value.trim() === "") {
+      emailError.textContent = "Input required!";
+      isValid = false;
+  } else {
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+          emailError.textContent = "Please enter a valid email address.";
+          isValid = false;
+      }
+  }
+
+  if (subject.value.trim() === "") {
+      subjectError.textContent = "Input required!";
+      isValid = false;
+  }
+
+  if (message.value.trim() === "") {
+      messageError.textContent = "Input required!";
+      isValid = false;
+  }
+
+  if (isValid) {
+      // Show the confirmation modal
+      document.getElementById('confirmationModal').style.display = 'block';
+  }
+
+  return isValid;
+}
+
+// Show confirmation modal
+document.getElementById("showModalButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default behavior of form submission
+  if (validateForm()) {
+      document.getElementById("confirmationModal").style.display = "block"; // Show the confirmation modal
+  }
+});
+
+// Close the modal
+document.querySelector(".cls").addEventListener("click", function() {
+  // console.log("Close button clicked");
+  document.getElementById("confirmationModal").style.display = "none";
+});
+
+// Proceed button action
+document.getElementById("proceedButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default behavior of the button
+  document.getElementById("confirmationModal").style.display = "none"; // Close the modal
+  document.getElementById("contact-form").submit(); // Submit the form
+
+  submitFormLogic();
+});
+
+function submitFormLogic() {
+  document.getElementById("contact-form").reset();
+}
+
+
+// Add event listeners for Enter key on input fields
+var inputFields = document.querySelectorAll("#name, #email, #subject, #message");
+inputFields.forEach(function(input, index) {
+    input.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default behavior of Enter key
+            if (index < inputFields.length - 1) {
+                inputFields[index + 1].focus(); // Move focus to the next input field
+            } else {
+                if (validateField(input)) {
+                    document.getElementById("confirmationModal").style.display = "block"; // Show the confirmation modal
+                }
+            }
+        }
+    });
+});
+
+// Validate a specific field
+function validateField(input) {
+    var error = input.nextElementSibling;
+    error.textContent = ""; // Clear previous error message
+
+    if (input.value.trim() === "") {
+        error.textContent = "Input required!";
+        return false;
+    }
+
+    if (input.getAttribute("type") === "email") {
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(input.value.trim())) {
+            error.textContent = "Please enter a valid email address.";
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+  //  Clear input fields
+  function clearInputs() {
     var inputFields = document.querySelectorAll("#contact-form input, #contact-form textarea");
 
-    // Loop through all input and textarea elements and reset their values to empty
     for (var i = 0; i < inputFields.length; i++) {
-      inputFields[i].value = "";
+        inputFields[i].value = "";
     }
-  }
 
-  // Enter key is pressed
-  document.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13 && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
-      event.preventDefault(); // Prevent form submission on Enter key
-      document.getElementById("contact-form").submit(); // Submit the form manually
-    }
-  });
+    // Clear error messages
+    var errorElements = document.querySelectorAll(".error");
+    errorElements.forEach(function(error) {
+        error.textContent = "";
+    });
+}
+
+ 
+  
+  
+  
+  
+  
+  
