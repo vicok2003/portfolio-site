@@ -524,7 +524,7 @@ span.psw {
 }
 
 
-  @media screen and (max-width: 665px){
+  @media screen and (max-width: 720px){
     .topnav{
       display: block;
       width: 100%;
@@ -618,7 +618,7 @@ span.psw {
     #backToTopBtn{
       right: 10px;
       bottom: 20px;
-      width: 40%;
+      width: 45%;
       border-radius: 6px;
     }
   }
