@@ -5,43 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buikem's portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,500&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
 </head>
-<style>
-  .active { 
-    background-color: #333;
-  }
-</style>
 <body>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <!--mobile Top Navigation Menu -->
 <div class="topnav">
-  <a href="#Home" class="active">Home</a>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
-    <a href="#About">About</a>
-    <a href="#Experience">Experience</a>
-    <a href="#Contact">Contact</a>
-    <a href="#Projects">Projects</a>
+    <a href="#Home" onclick="myFunction()">Home</a>
+    <a href="#About" onclick="myFunction()">About</a>
+    <a href="#Experience" onclick="myFunction()">Experience</a>
+    <a href="#Contact" onclick="myFunction()">Contact</a>
+    <a href="#Projects" onclick="myFunction()">Projects</a>
   </div>
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
+
 <!-- desktop nav -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#About">About</a>
-    <a href="#Experience">Experience</a>
-    <a href="#Contact">Contacts</a>
-    <a href="#Projects">Projects</a>
+    <a href="#About" onclick="closeNav()">About</a>
+    <a href="#Experience" onclick="closeNav()">Experience</a>
+    <a href="#Contact" onclick="closeNav()">Contacts</a>
+    <a href="#Projects" onclick="closeNav()">Projects</a>
   </div>
 
     <!-- main body content -->
@@ -265,7 +258,7 @@
                 <span class="cls">&times;</span>
                 </div>
                 <p class="confirmation-m">
-                  <b>Notice:</b> Please cross-check your inputs to ensure correct spelling of email and other details. If you are certain that everything is correct, you may proceed to send your email.
+                  <b>Attention:</b> Please cross-check your inputs to ensure that email domain is correct <i>(eg: Name@gmail.com)</i> and other details are correct too. If you are certain that everything is correct, you may proceed to send your email.
                 </p>
                 <button id="proceedButton" onclick="submitForm()">Proceed and Send</button>
               </div>
@@ -284,7 +277,6 @@
         <p class="contact-email-p">Looking to elevate your online presence? I'm a talented web developer ready to create your dream website. Let's collaborate and build something amazing together. Message me today!</p>
 
         <div class="contact-email">
-          <!-- <a href="mailto:vicok2003@gmail.com" style="color: #fff; cursor: pointer;">vicok2003@gmail.com</a> -->
           <button onclick="document.getElementById('id01').style.display='block'">Send Email</button>
         </div>
 
@@ -308,7 +300,7 @@
       <p style="text-align: center; text-transform: uppercase; padding-top: 46px; color: #fff; opacity: 0.3; font-size: 15px;">&copy;vicok 2023</p>
       </div>
     </footer>
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">&#8592; Back to top</button>
   <script src="./index.js"></script>
-  <!-- <div style="margin-top: 400px;"></div> -->
 </body>
 </html>

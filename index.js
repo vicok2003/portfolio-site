@@ -47,7 +47,17 @@ function eraseText() {
 window.onload = typeText;
 
 
-// Dropdown functions
+// // Dropdown functions
+// function myFunction() {
+//   var x = document.getElementById("myLinks");
+//   if (x.style.display === "block") {
+//     x.style.display = "none";
+//   } else {
+//     x.style.display = "block";
+//   }
+// }
+
+// mobile navbar
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
@@ -57,7 +67,8 @@ function myFunction() {
   }
 }
 
-// sidebar navigation
+
+//desktop sidebar navigation
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -102,28 +113,28 @@ function validateForm() {
 
   // Simple validation to check if the required! fields are not empty
   if (name.value.trim() === "") {
-      nameError.textContent = "Input required!";
+      nameError.textContent = "Your company name or individual name is required*";
       isValid = false;
   }
 
   if (email.value.trim() === "") {
-      emailError.textContent = "Input required!";
+      emailError.textContent = "A valid email address is required here*";
       isValid = false;
   } else {
       var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email.value.trim())) {
-          emailError.textContent = "Please enter a valid email address.";
+          emailError.textContent = "Please enter a valid email address*";
           isValid = false;
       }
   }
 
   if (subject.value.trim() === "") {
-      subjectError.textContent = "Input required!";
+      subjectError.textContent = "Please address a subject*";
       isValid = false;
   }
 
   if (message.value.trim() === "") {
-      messageError.textContent = "Input required!";
+      messageError.textContent = "A message needs to be passed across*";
       isValid = false;
   }
 
@@ -218,7 +229,47 @@ function validateField(input) {
 }
 
  
+// when a user begins  scrolling
+var timeout;
+
+// Show the "Back to Top" button when user starts scrolling
+window.onscroll = function() {
+  clearTimeout(timeout); 
+  showBackToTopButton();
   
+  timeout = setTimeout(function() {
+    hideBackToTopButton();
+  }, 1000);
+};
+
+function showBackToTopButton() {
+  var btn = document.getElementById("backToTopBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 || btn.classList.contains("hovered")) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+function hideBackToTopButton() {
+  var btn = document.getElementById("backToTopBtn");
+  if (!btn.classList.contains("hovered")) {
+    btn.style.display = "none";
+  }
+}
+
+var backToTopBtn = document.getElementById("backToTopBtn");
+backToTopBtn.addEventListener("mouseover", function() {
+  backToTopBtn.classList.add("hovered");
+});
+backToTopBtn.addEventListener("mouseout", function() {
+  backToTopBtn.classList.remove("hovered");
+});
+
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, Opera
+}
   
   
   
